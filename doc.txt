@@ -1,0 +1,48 @@
+
+
+School Management System — Quick guide
+
+Created by: Moses Kashimbaya
+
+This is a small console program written in C++ that helps you keep simple records for students, teachers and courses. You run it, use the menu to add or list items, enroll students in courses, and optionally save everything to `SchoolData.txt`.
+
+What's in the code
+- `main.cpp` contains everything. It defines three small structs — `Student` (name, age, grade), `Teacher` (name, subject) and `Course` (name, studentsEnrolled).
+- The `SchoolManagementSystem` class holds arrays for students, teachers and courses (each array can hold up to 100 items) and methods to add, show, enroll and save data.
+- `main()` creates an instance of the class, shows a menu in a loop, reads your numeric choice, and runs the matching action. Choose 11 to exit.
+
+How to use it (short):
+- Run the program, pick a menu number.
+- Options include adding a student, teacher or course; enrolling a student in a course; viewing lists; and saving to a text file.
+
+Important practical notes (so it's not surprising):
+- Inputs use `cin >>` — so names or course titles with spaces will be cut off at the first space. If you want to enter full names with spaces, the code needs `getline()` instead.
+- The program uses fixed arrays sized to 100. If you expect more entries, converting those to `std::vector` is the right next step.
+- Course enrollment is stored as a single comma-separated string. That keeps the code simple but makes more advanced operations (like removing one student from a course) awkward.
+
+How to compile and run (Windows examples):
+Using MinGW/g++ in PowerShell:
+powershell
+g++ -std=c++17 -O2 -o school.exe main.cpp
+.\school.exe
+
+
+Using Visual C++ (Developer Command Prompt or cl):
+powershell
+cl /EHsc /std:c++17 main.cpp /Fe:school.exe
+.\school.exe
+
+
+Where data goes
+- Choose menu item 8 to save. The program creates (or overwrites) `SchoolData.txt` in the same folder and writes students, teachers and courses there.
+
+Small ideas to make it nicer (I can do these for you):
+- Allow spaces in names and course titles by switching inputs to `getline()`.
+- Replace arrays with `std::vector` so you never worry about hitting 100 items.
+- Store enrolled students as a `vector<string>` instead of one long text field.
+
+Tell me how you'd like this adjusted — quieter wording, shorter, or shall I update the code to accept full names and use vectors? 
+
+
+
+
