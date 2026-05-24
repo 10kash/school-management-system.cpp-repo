@@ -41,8 +41,6 @@ Small ideas to make it nicer (I can do these for you):
 - Replace arrays with `std::vector` so you never worry about hitting 100 items.
 - Store enrolled students as a `vector<string>` instead of one long text field.
 
-Tell me how you'd like this adjusted — quieter wording, shorter, or shall I update the code to accept full names and use vectors? 
-
 
 
 
